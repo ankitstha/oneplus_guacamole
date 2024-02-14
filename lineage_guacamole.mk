@@ -19,12 +19,14 @@ MATRIXX_MAINTAINER := c00chiemilker
 MATRIXX_CHIPSET := Snapdragon855
 MATRIXX_BATTERY := 4000mAh
 MATRIXX_DISPLAY := 1440x3120
-WITH_GMS := true
 TARGET_HAS_UDFPS := true
+TARGET_DISABLE_EPPE := true
+
+# GMS Flags
+WITH_GMS := true
 BUILD_GOOGLE_CONTACTS := true
 BUILD_GOOGLE_DIALER := true
 BUILD_GOOGLE_MESSAGE := true
-TARGET_DISABLE_EPPE := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_guacamole
