@@ -11,23 +11,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from guacamole device
 $(call inherit-product, device/oneplus/guacamole/device.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common RisingOS stuff.
+$$(call inherit-product, vendor/rising/config/rising.mk)
 
-# Matrixx Flags
-MATRIXX_MAINTAINER := c00chiemilker
-MATRIXX_CHIPSET := Snapdragon855
-MATRIXX_BATTERY := 4000mAh
-MATRIXX_DISPLAY := 1440x3120
-WITH_GMS := true
+# RisingOS Flags
+RISING_MAINTAINER := c00chiemilker
+WITH_GMS := false
 TARGET_HAS_UDFPS := true
-BUILD_GOOGLE_CONTACTS := true
-BUILD_GOOGLE_DIALER := true
-BUILD_GOOGLE_MESSAGE := true
-TARGET_DISABLE_EPPE := true
+RISING_RAM := 6GB
+RISING_STORAGE := 128GB
+RISING_BATTERY := 4000mAh
+RISING_DISPLAY := 1440x3120
+RISING_CHIPSET := Snapdragon 855
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_guacamole
+PRODUCT_NAME := rising_guacamole
 PRODUCT_DEVICE := guacamole
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := GM1917
@@ -47,7 +45,10 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Build info
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=OnePlus7Pro \
-    TARGET_NAME=OnePlus7Pro
+    PRIVATE_BUILD_DESC="OnePlus7Pro-user 12 SKQ1.211113.001 P.202303230244 release-keys" \
+    TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
+    TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
+
+BUILD_FINGERPRINT := "OnePlus/OnePlus7Pro/OnePlus7Pro:12/SKQ1.211113.001/P.202303230244:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
