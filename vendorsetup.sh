@@ -25,6 +25,11 @@ git clone https://github.com/KProfiles/android_packages_apps_Kprofiles packages/
 git clone https://gitlab.com/PixelPlusUI-SnowCone/vendor_oneplus_apps.git vendor/oneplus/apps
 echo ""
 
+#Clang 18.0
+echo "Cloning Clang 18"
+git clone https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r510928 prebuilts/clang/host/linux-x86/clang-r510928 --depth=1
+echo ""
+
 # URL of the ZIP file
 zip_url="https://sourceforge.net/projects/evolutionx-guacamole/files/firmware_oneplus7pro.zip/download"
 
